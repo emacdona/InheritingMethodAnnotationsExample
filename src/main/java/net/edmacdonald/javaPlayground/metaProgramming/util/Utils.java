@@ -10,7 +10,7 @@ import java.util.List;
 
 public class Utils
 {
-        private boolean isImplementedMethodAnnotatedWithPath(Method method, Annotation annotation)
+        public static boolean isImplementedMethodAnnotatedWith(Method method, Class annotation)
         {
             Class[] clazzes = getAllInterfaces(method.getDeclaringClass());
 
@@ -21,7 +21,7 @@ public class Utils
                     //Throws an exception if method not found.
                     Method m = clazz.getDeclaredMethod(method.getName(), method.getParameterTypes());
 
-                    if(null != m.getAnnotation(annotation.getClass()))
+                    if(null != m.getAnnotation(annotation))
                     {
                         return true;
                     }
@@ -35,12 +35,12 @@ public class Utils
             return false;
         }
 
-        private Class[] getAllInterfaces(Class clazz)
+        private static Class[] getAllInterfaces(Class clazz)
         {
             return getAllInterfaces(new Class[] { clazz } );
         }
 
-        private Class[] getAllInterfaces(Class[] classes)
+        private static Class[] getAllInterfaces(Class[] classes)
         {
             if(0 == classes.length )
             {

@@ -1,9 +1,11 @@
 package net.edmacdonald.javaPlayground.metaProgramming.annotation;
 
-/**
- * User: emacdona
- * Date: 3/4/11
- * Time: 11:30 PM
- */
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
+
+@Retention(RetentionPolicy.RUNTIME)
+@Target(ElementType.METHOD)
 public @interface BusyWork {
 }
