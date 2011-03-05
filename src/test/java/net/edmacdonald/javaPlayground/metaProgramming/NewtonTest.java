@@ -41,6 +41,7 @@ public class NewtonTest {
                return true;
            }
         }
+
         return false;
     }
 }
