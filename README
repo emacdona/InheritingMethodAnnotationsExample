@@ -1,0 +1,5 @@
+
+run:
+mvn clean install
+
+Then watch the test results.
