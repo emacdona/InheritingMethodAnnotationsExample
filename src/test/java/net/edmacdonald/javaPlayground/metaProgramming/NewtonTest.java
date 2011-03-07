@@ -37,7 +37,7 @@ public class NewtonTest {
 
     private boolean naiveBusyWorkCheck(Object obj){
         for(Method method: obj.getClass().getMethods()){
-           if(null != method.getAnnotation(BusyWork.class)){
+           if(method.isAnnotationPresent(BusyWork.class)){
                return true;
            }
         }
