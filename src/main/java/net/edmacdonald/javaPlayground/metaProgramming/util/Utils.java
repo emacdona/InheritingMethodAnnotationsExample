@@ -16,7 +16,7 @@ public class Utils {
                 //Throws an exception if method not found.
                 Method m = clazz.getDeclaredMethod(method.getName(), method.getParameterTypes());
 
-                if(null != m.getAnnotation(annotation)) {
+                if(m.isAnnotationPresent(annotation)) {
                     return true;
                 }
             }
